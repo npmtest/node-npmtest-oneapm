@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-oneapm",     "homepage": "https://github.com/npmtest/node-npmtest-oneapm",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-oneapm.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [oneapm (v2.0.0)](http://oneapm.com/features/nodejs.html)  [![npm package](https://img.shields.io/npm/v/npmtest-oneapm.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-oneapm) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-oneapm.svg)](https://travis-ci.org/npmtest/node-npmtest-oneapm)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-oneapm",
+    "keywords": [
+        "coverage",
+        "test",
+        "oneapm"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_oneapm.js",
+    "name": "npmtest-oneapm",
+    "nameAlias": "npmtest_oneapm",
+    "nameOriginal": "npmtest-oneapm",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-oneapm.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2017.4.26"
+}
